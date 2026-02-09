@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+    mysql:
+        image: mysql:8.0
+        container_name: winter-mysql
+        restart: unless-stopped
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: winter
+            MYSQL_USER: admin
+            MYSQL_PASSWORD: suportemasterix@2025
+        ports:
+            - "3306:3306"
+        volumes:
+            - ./.docker/mysql:/var/lib/mysql
