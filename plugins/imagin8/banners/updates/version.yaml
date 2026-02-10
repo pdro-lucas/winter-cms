@@ -1,0 +1,14 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table imagin8_banners_categories'
+    - builder_table_create_imagin8_banners_categories.php
+1.0.3:
+    - 'Created table imagin8_banners_items'
+    - builder_table_create_imagin8_banners_items.php
+1.0.4:
+    - 'Updated table imagin8_banners_items'
+    - builder_table_update_imagin8_banners_items.php
+1.0.5:
+    - 'Updated table imagin8_banners_items'
+    - builder_table_update_imagin8_banners_items_2.php

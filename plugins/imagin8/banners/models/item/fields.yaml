@@ -1,0 +1,65 @@
+tabs:
+    fields:
+        category:
+            label: Categoria do Banner
+            span: auto
+            type: relation
+            required: true
+            emptyOption: '-- Escolha uma Categoria --'
+            tab: Conteúdo
+        title:
+            label: Titulo
+            span: auto
+            type: text
+            tab: Conteúdo
+        subtitle:
+            label: Subtitulo
+            span: auto
+            type: text
+            tab: Conteúdo
+        link_url:
+            label: URL
+            span: auto
+            type: text
+            tab: Conteúdo
+        button_text:
+            label: 'Texto do botão'
+            span: auto
+            type: text
+            tab: Conteúdo
+        text_color:
+            label: 'Cor do texto'
+            span: auto
+            type: colorpicker
+            tab: Conteúdo
+        image_desktop:
+            label: 'Imagem Desktop'
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            type: fileupload
+            comment: 1920x600px
+            tab: Imagens
+        image_tablet:
+            label: 'Imagem Tablet'
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            type: fileupload
+            tab: Imagens
+        image_mobile:
+            label: 'Imagem Mobile'
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            type: fileupload
+            tab: Imagens

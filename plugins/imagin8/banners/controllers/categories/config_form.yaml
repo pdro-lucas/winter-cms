@@ -1,0 +1,10 @@
+name: Categories
+form: $/imagin8/banners/models/category/fields.yaml
+modelClass: Imagin8\Banners\Models\Category
+defaultRedirect: imagin8/banners/categories
+create:
+    redirect: 'imagin8/banners/categories/update/:id'
+    redirectClose: imagin8/banners/categories
+update:
+    redirect: imagin8/banners/categories
+    redirectClose: imagin8/banners/categories

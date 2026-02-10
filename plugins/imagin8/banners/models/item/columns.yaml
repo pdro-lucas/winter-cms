@@ -1,0 +1,30 @@
+columns:
+    image_desktop:
+        label: Imagem
+        type: image
+        sortable: false
+        searchable: false
+        width: '100px'
+
+    title:
+        label: Título
+        type: text
+        searchable: true
+        sortable: true
+
+    category:
+        label: Categoria
+        relation: category
+        select: name
+        sortable: false
+
+    is_active:
+        label: Ativo
+        type: switch
+        sortable: true
+
+    id:
+        label: ID
+        type: number
+        sortable: true
+        width: '50px'

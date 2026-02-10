@@ -1,0 +1,104 @@
+{% if __SELF__.banners|length > 0 %}
+
+<div class="swiper mySwiper-{{ __SELF__.category.code }} w-full h-[500px] relative group">
+
+    <div class="swiper-wrapper">
+        {% for banner in __SELF__.banners %}
+        <div class="swiper-slide relative bg-gray-100 overflow-hidden">
+
+            {% if banner.link_url and not banner.button_text %}
+            <a href="{{ banner.link_url }}" class="absolute inset-0 z-20"></a>
+            {% endif %}
+
+            <picture class="block w-full h-full">
+                {# Mobile (até 768px) #}
+                {% if banner.image_mobile %}
+                <source media="(max-width: 768px)" srcset="{{ banner.image_mobile.path }}">
+                {% endif %}
+
+                {# Tablet (até 1024px) #}
+                {% if banner.image_tablet %}
+                <source media="(max-width: 1024px)" srcset="{{ banner.image_tablet.path }}">
+                {% endif %}
+
+                {# Desktop (Padrão) #}
+                {% if banner.image_desktop %}
+                <img src="{{ banner.image_desktop.path }}"
+                     alt="{{ banner.title }}"
+                     class="w-full h-full object-cover">
+                {% else %}
+                <div class="w-full h-full bg-gray-300 flex items-center justify-center">Sem Imagem</div>
+                {% endif %}
+            </picture>
+
+            {% if banner.title %}
+            <div class="absolute inset-0 z-10 flex items-center justify-center">
+                <div class="container mx-auto px-4 text-center">
+                    <div class="inline-block p-6 rounded-lg" style="color: {{ banner.text_color|default('#ffffff') }}">
+
+                        <h2 class="text-4xl md:text-6xl font-bold mb-4 drop-shadow-md">
+                            {{ banner.title }}
+                        </h2>
+
+                        {% if banner.subtitle %}
+                        <p class="text-lg md:text-2xl mb-8 drop-shadow-md">
+                            {{ banner.subtitle }}
+                        </p>
+                        {% endif %}
+
+                        {% if banner.button_text %}
+                        <a href="{{ banner.link_url }}"
+                           class="inline-block px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded transition-colors shadow-lg">
+                            {{ banner.button_text }}
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+        </div>
+        {% endfor %}
+    </div>
+
+    {% if __SELF__.category.options_pagination %}
+    <div class="swiper-pagination"></div>
+    {% endif %}
+
+    {% if __SELF__.category.options_arrows %}
+    <div class="swiper-button-next !hidden group-hover:!flex"></div>
+    <div class="swiper-button-prev !hidden group-hover:!flex"></div>
+    {% endif %}
+</div>
+
+<script>
+    // Espera o DOM carregar
+    document.addEventListener('DOMContentLoaded', function() {
+        new Swiper(".mySwiper-{{ __SELF__.category.code }}", {
+            loop: {{ __SELF__.category.options_loop ? 'true' : 'false' }},
+
+        {% if __SELF__.category.options_autoplay %}
+        autoplay: {
+            delay: 5000,
+                disableOnInteraction: false,
+        },
+        {% endif %}
+
+        pagination: {
+            el: ".swiper-pagination",
+                clickable: true,
+        },
+
+        navigation: {
+            nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+        },
+    });
+    });
+</script>
+
+{% else %}
+<div class="alert alert-warning p-4 bg-yellow-100 text-yellow-800 text-center">
+    Nenhum banner ativo encontrado para a categoria: <strong>{{ __SELF__.category.code ?? 'Código Inválido' }}</strong>
+</div>
+{% endif %}

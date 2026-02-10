@@ -1,0 +1,4 @@
+title: Items
+modelClass: Imagin8\Banners\Models\Item
+toolbar:
+    buttons: reorder_toolbar

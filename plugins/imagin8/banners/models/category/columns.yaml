@@ -1,0 +1,19 @@
+columns:
+    id:
+        label: id
+        type: number
+    name:
+        label: Nome
+        type: text
+    code:
+        label: Código
+        type: text
+    options_autoplay:
+        label: Autoplay
+        type: switch
+    created_at:
+        label: created_at
+        type: datetime
+    updated_at:
+        label: updated_at
+        type: datetime

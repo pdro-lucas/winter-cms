@@ -1,0 +1,15 @@
+plugin:
+    name: 'imagin8.banners::lang.plugin.name'
+    description: 'imagin8.banners::lang.plugin.description'
+    author: imagin8
+    icon: 'fas icon-images'
+navigation:
+    banners:
+        label: Banners
+        url: imagin8/banners/items
+        icon: icon-image
+        sideMenu:
+            categories:
+                label: Categorias
+                url: imagin8/banners/categories
+                icon: icon-sitemap

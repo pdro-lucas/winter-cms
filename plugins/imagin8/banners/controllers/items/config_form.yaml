@@ -1,0 +1,10 @@
+name: Items
+form: $/imagin8/banners/models/item/fields.yaml
+modelClass: Imagin8\Banners\Models\Item
+defaultRedirect: imagin8/banners/items
+create:
+    redirect: 'imagin8/banners/items/update/:id'
+    redirectClose: imagin8/banners/items
+update:
+    redirect: imagin8/banners/items
+    redirectClose: imagin8/banners/items
