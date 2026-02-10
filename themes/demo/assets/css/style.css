@@ -472,6 +472,12 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
+  .border-white {
+    border-color: var(--color-white);
+  }
+  .\!bg-blue-600 {
+    background-color: var(--color-blue-600) !important;
+  }
   .bg-black {
     background-color: var(--color-black);
   }
